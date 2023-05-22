@@ -1,6 +1,6 @@
 import "./App.css";
 import Cards from "./components/cards/Cards.jsx";
-import SearchBar from "./components/SearchBar.jsx";
+import SearchBar from "./components/searchbar/SearchBar.jsx";
 import characters from "./data.js";
 
 function App() {
