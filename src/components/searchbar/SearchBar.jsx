@@ -1,19 +1,15 @@
-import styled from "styled-components"
+import {Div, Input, Button} from "../assets/styles"
+import { useState } from "react";
 export default function SearchBar({onSearch}) {
-   const Div = styled.span`
-      height: 50px;
-   `;
-   const Input = styled.input`
-      background-color: rgba(22, 176, 193, 0.5);
-   `;
-   const Button = styled.button`
-      background-color: black;
-      color: white;
-   `
+   const [id, setId] = useState("")
+   const handleChange = (event) => {
+      setId(event.target.value);      
+   }
+
     return (
        <Div>
-         <Input type='search' />
-         <Button onClick={(id) => onSearch(id)}>Agregar</Button>
+         <Input type='search' onChange={handleChange}/>
+         <Button onClick={() => onSearch(id)}>Agregar</Button>
        </Div>
     );
  }

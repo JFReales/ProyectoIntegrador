@@ -1,9 +1,9 @@
 import styled from "./Card.module.css" 
-export default function Card({name, status, species, gender, origin, image, onClose}) {
+export default function Card({name, status, species, gender, origin, image, onClose, id}) {
    return (
       <div className= {styled.container}>
          <div className={styled.buttonContainer}>
-            <button onClick={ () => onClose()} className = {styled.button}>
+            <button onClick={ () => onClose(id)} className = {styled.button}>
                X
             </button>
          </div>
