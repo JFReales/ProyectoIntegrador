@@ -1,4 +1,4 @@
-import {Div, Input, Button} from "../assets/styles"
+import {Div, Input, Button} from "./assets/styles"
 import { useState } from "react";
 export default function SearchBar({onSearch}) {
    const [id, setId] = useState("")

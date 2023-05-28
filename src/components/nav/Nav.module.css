@@ -1,6 +1,12 @@
 .container {
     background-color:rgba(173, 173, 173, 0.5);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
+}
+.button{
+    background-color: azure;
+    color: black;
+    
+
 }

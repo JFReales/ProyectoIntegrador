@@ -1,9 +1,12 @@
 import "./App.css";
 import Cards from "./components/cards/Cards.jsx";
 import Nav from "./components/nav/Nav";
-import background from "./img/fondo.png";
+import About from "./components/about/About";
+import Detail from "./components/detail/Detail";
 import { useState } from "react";
 import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+
 const URL = "https://rickandmortyapi.com/api/character";
 
 function App() {
@@ -24,9 +27,19 @@ function App() {
 		setCharacters(filtered);
 	};
 	return (
-		<div className="App" style={{ backgroundImage: `url(${background})` }}>
+		<div
+			className="App"
+			style={{ backgroundImage: "url(/img/fondo.png", backgroundSize: "100%" }}
+		>
 			<Nav onSearch={onSearch} />
-			<Cards characters={characters} onClose={onClose} />
+			<Routes>
+				<Route
+					path="/home"
+					element={<Cards characters={characters} onClose={onClose} />}
+				/>
+				<Route path="/about" element={<About />} />
+				<Route path="/detail/:id" element={<Detail />} />
+			</Routes>
 		</div>
 	);
 }
