@@ -1,5 +1,5 @@
 import styled from "./Form.module.css"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import validation from "./validation";
 
 export default function Form() {
@@ -12,6 +12,7 @@ export default function Form() {
         setErrors(validation ({...userData, [name]:value}))
         setUserData({...userData, [name]:value})
     }
+    
    
 
     return(
