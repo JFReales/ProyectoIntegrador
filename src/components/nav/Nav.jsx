@@ -13,6 +13,11 @@ export default function Nav ({onSearch}) {
                     Home
                 </button>
             </Link>
+            <Link to="/favorites">
+                <button className={styled.button}>
+                    Favorites
+                </button>
+            </Link>
             <SearchBar onSearch={onSearch} />
 
         </div>

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 export const Div = styled.span`
+
     height: 50px;
     margin-top: 28px;
     margin-rigth: 10px;

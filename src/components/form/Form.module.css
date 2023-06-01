@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:cornflowerblue;
+    width: min-content;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.input{
+    margin: 10px;
+}
+
+.button{
+    border-radius: 20px;
+    color: black;
+    background-color:aliceblue ;
+}
+
+.externo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
