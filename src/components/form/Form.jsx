@@ -2,7 +2,8 @@ import styled from "./Form.module.css"
 import { useState } from "react";
 import validation from "./validation";
 
-export default function Form() {
+
+export default function Form({login}) {
 
     const [userData, setUserData] = useState({email:"", password:""});
     const [errors, setErrors] = useState({email:"", password:""});
@@ -12,7 +13,12 @@ export default function Form() {
         setErrors(validation ({...userData, [name]:value}))
         setUserData({...userData, [name]:value})
     }
+    const handleSubmit = (event) => {
+        event.preventDefault() 
+        login (userData)
+    }
     
+
    
 
     return(
@@ -32,7 +38,7 @@ export default function Form() {
                     <input onChange={handleChange} type="password" name="password" />
                     {errors.password && <p>{errors.password}</p>}
                 </div>
-                <button className={styled.button}>Log in</button>
+                <button className={styled.button} onClick={handleSubmit}>Log in</button>
             </form>
         </div>
         
