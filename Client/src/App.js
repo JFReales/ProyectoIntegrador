@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
-const URL = "https://rickandmortyapi.com/api/character";
+const URL = "http://localhost:3001/rickandmorty/character/";
 const EMAIL = "jfreales@gmail.com";
 const PASSWORD = "123456";
 
