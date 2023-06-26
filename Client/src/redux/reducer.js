@@ -6,18 +6,10 @@ const initialState = {
 export default function reducer(state = initialState, { type, payload }) {
 	switch (type) {
 		case "ADD_FAV":
-			return {
-				...state,
-				myFavorites: [...state.allCharacters, payload],
-				allCharacters: [...state.allCharacters, payload],
-			};
+			return { ...state, myFavorites: payload, allCharacters: payload };
 
 		case "REMOVE_FAV":
-			const filtered = state.myFavorites.filter((char) => char.id !== payload);
-			return {
-				...state,
-				myFavorites: filtered,
-			};
+			return { ...state, myFavorites: payload };
 		case "FILTER":
 			const filteredByGender = state.allCharacters.filter(
 				(char) => char.gender === payload

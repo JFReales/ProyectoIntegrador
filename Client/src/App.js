@@ -10,8 +10,6 @@ import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3001/rickandmorty/character";
-const EMAIL = "jfreales@gmail.com";
-const PASSWORD = "123456";
 
 function App() {
 	const [characters, setCharacters] = useState([]);
@@ -39,10 +37,13 @@ function App() {
 	};
 
 	const login = (userData) => {
-		if (userData.password === PASSWORD && userData.email === EMAIL) {
-			setAccess(true);
-			navigate("/home");
-		}
+		const { email, password } = userData;
+		const URL = "http://localhost:3001/rickandmorty/login/";
+		axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+			const { access } = data;
+			setAccess(access);
+			access && navigate("/home");
+		});
 	};
 	return (
 		<div
